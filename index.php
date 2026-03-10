@@ -21,19 +21,22 @@
             <p>Federal Institute of Science and Technology<br>Water Management System</p>
         </div>
         
-        <form action="dashboard.html" class="login-form">
+        <form action="login.php" method="POST" class="login-form">
+            <?php if(isset($_GET['error'])): ?>
+                <div style="color: red; margin-bottom: 1rem; text-align: center;">Invalid username or password</div>
+            <?php endif; ?>
             <div class="input-group">
                 <label for="username">Username</label>
                 <div class="input-with-icon">
                     <i class="ph ph-user"></i>
-                    <input type="text" id="username" placeholder="Enter your username" required>
+                    <input type="text" id="username" name="username" placeholder="Enter your username (admin)" required>
                 </div>
             </div>
             <div class="input-group">
                 <label for="password">Password</label>
                 <div class="input-with-icon">
                     <i class="ph ph-lock-key"></i>
-                    <input type="password" id="password" placeholder="Enter your password" required>
+                    <input type="password" id="password" name="password" placeholder="Enter your password (admin123)" required>
                 </div>
             </div>
             
